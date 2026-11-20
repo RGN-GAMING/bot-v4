@@ -1,0 +1,27 @@
+MINE CLOUD VPS MANAGER — INSTALLATION
+Developer: RGN GAMING
+
+1. Extract the ZIP on your Linux VPS.
+2. Open the extracted folder:
+   cd minecloud_work
+3. Run the installer:
+   chmod +x install.sh
+   sudo bash install.sh
+4. Answer the setup prompts. The bot token is hidden while typing.
+5. The installer creates .env automatically, installs Python dependencies,
+   checks Python syntax, creates the systemd service, and starts the bot.
+
+You do NOT need to create or edit .env manually.
+
+SERVICE COMMANDS
+   systemctl status mine-cloud-bot
+   journalctl -u mine-cloud-bot -f
+   systemctl restart mine-cloud-bot
+   systemctl stop mine-cloud-bot
+
+IMPORTANT
+- This bot needs a working LXD/LXC host and the `lxc` command for VPS deployment.
+- The installer does not install or reconfigure LXD automatically.
+- Web SSH is the existing HTTP/Flask feature; no separate WebSocket server is added.
+- Configure HTTPS/reverse proxy and firewall before exposing Web SSH publicly.
+- Do not share your Discord bot token. If it was exposed, reset it in Discord Developer Portal.
